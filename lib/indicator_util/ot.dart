@@ -3,7 +3,7 @@
 import 'dart:math' as math;
 
 ///计算列表元素一定周期内的和
-List<double> calcSUM(List<double> arr, final int period) {
+List<double> calcSUM(final List<double> arr, final int period) {
   List<double> a = [];
   if (period != 0) {
     for (int r = 0; r < arr.length; r++) {
@@ -23,7 +23,7 @@ List<double> calcSUM(List<double> arr, final int period) {
 }
 
 ///计算列表元素的和
-double listSum(List<double> arr) {
+double listSum(final List<double> arr) {
   double sum = 0;
   for (double num in arr) {
     sum += num;
@@ -32,7 +32,7 @@ double listSum(List<double> arr) {
 }
 
 ///计算简单移动平均线（MA）
-List<double> calcMA(List<double> arr, final int period) {
+List<double> calcMA(final List<double> arr, final int period) {
   List<double> r = [];
   double e = 0;
 
@@ -53,7 +53,7 @@ List<double> calcMA(List<double> arr, final int period) {
 }
 
 /// 计算一定周期内的最高值
-List<double> calcHHV(List<double> arr, final int period) {
+List<double> calcHHV(final List<double> arr, final int period) {
   final List<double> result = [];
   final int length = arr.length;
 
@@ -80,7 +80,7 @@ List<double> calcHHV(List<double> arr, final int period) {
 }
 
 /// 计算一定周期内的最低值
-List<double> calcLLV(List<double> arr, final int period) {
+List<double> calcLLV(final List<double> arr,final int period) {
   List<double> result = [];
   int length = arr.length;
 
@@ -135,4 +135,38 @@ dynamic calcMAX(dynamic value1, dynamic value2) {
   } else {
     throw ArgumentError("Invalid argument type for Function calcMAX!");
   }
+}
+
+/// 计算平均值
+double calcA(final List<double> data) {
+  double sum = 0;
+  for (double value in data) {
+    sum += value;
+  }
+  return sum / data.length;
+}
+
+/// 计算标准差
+double calcSD(final List<double> data,final  int? degreesOfFreedom) {
+  double average = calcA(data);
+  int length = data.length;
+  double sumOfSquaredDifferences = 0;
+  for (double value in data) {
+    sumOfSquaredDifferences += (value - average) * (value - average);
+  }
+  return degreesOfFreedom != null
+      ? math.sqrt(sumOfSquaredDifferences / (length - degreesOfFreedom))
+      : math.sqrt(sumOfSquaredDifferences / length);
+}
+
+/// 计算滚动标准差
+List<double> calcSTD(final List<double> data,final int period) {
+  List<double> result = [];
+  for (int index = 0; index < data.length; index++) {
+    List<double> subData = period > index
+        ? data.sublist(0, index + 1)
+        : data.sublist(index - period + 1, index + 1);
+    result.add(calcSD(subData, 1));
+  }
+  return result;
 }
