@@ -187,3 +187,27 @@ List<double> calcSTD(final List<double> data, final int period) {
   }
   return result;
 }
+
+/// 计算平均绝对偏差
+double calcAVEDEV(final List<double> arr) {
+  double average = calcA(arr);
+  double sumOfAbsoluteDifferences = 0;
+  int length = arr.length;
+  for (int index = 0; index < length; index++) {
+    sumOfAbsoluteDifferences += (arr[index] - average).abs();
+  }
+  return sumOfAbsoluteDifferences / length;
+}
+
+/// 计算滚动平均绝对偏差
+List<double> calcRollingAVEDEV(final List<double> arr,final  int period) {
+  List<double> result = [];
+  for (int index = 0; index < arr.length; index++) {
+    if (period > index) {
+      result.add(calcAVEDEV(arr.sublist(0, index + 1)));
+    } else {
+      result.add(calcAVEDEV(arr.sublist(index - period + 1, index + 1)));
+    }
+  }
+  return result;
+}

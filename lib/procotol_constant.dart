@@ -99,6 +99,9 @@ class FieldName {
   ///  BRAR指标，AR（人气指标）
   static const String ar = "AR";
 
+  ///顺势指标 CCI（Commodity Channel Index，商品通道指数）
+  static const String cci = "CCI";
+
 
 
 
