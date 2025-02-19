@@ -80,7 +80,7 @@ List<double> calcHHV(final List<double> arr, final int period) {
 }
 
 /// 计算一定周期内的最低值
-List<double> calcLLV(final List<double> arr,final int period) {
+List<double> calcLLV(final List<double> arr, final int period) {
   List<double> result = [];
   int length = arr.length;
 
@@ -104,7 +104,8 @@ dynamic calcMAX(dynamic value1, dynamic value2) {
       List<double> result = [];
       int length = value1.length;
       for (int index = 0; index < length; index++) {
-        result.add(math.max(value1[index].toDouble(), value2[index].toDouble()));
+        result
+            .add(math.max(value1[index].toDouble(), value2[index].toDouble()));
       }
       return result;
     } else if (value2 is num) {
@@ -139,6 +140,9 @@ dynamic calcMAX(dynamic value1, dynamic value2) {
 
 /// 计算平均值
 double calcA(final List<double> data) {
+  if (data.isEmpty) {
+    return 0;
+  }
   double sum = 0;
   for (double value in data) {
     sum += value;
@@ -147,26 +151,39 @@ double calcA(final List<double> data) {
 }
 
 /// 计算标准差
-double calcSD(final List<double> data,final  int? degreesOfFreedom) {
-  double average = calcA(data);
-  int length = data.length;
+///
+/// 标准差是统计学中用来衡量一组数值分散度的指标，它显示了这组数值中的各个数值相对于平均数的离散程度。
+/// 计算标准差的过程分为以下几个步骤：
+///
+/// 1、计算平均值：首先计算所有数据点的平均值（均值）。
+///
+/// 2、计算每个数据点与平均值的差的平方：对于每个数据点，减去平均值然后将结果平方。
+/// 这样做是为了确保所有的差值都是正数，并放大远离平均值的数据点的影响。
+///
+///3、计算这些平方差的平均值：将上一步得到的所有平方差加起来，
+///然后除以数据点的数量（对于样本标准差，则是数量减一，即使用所谓的贝塞尔校正）。
+///
+/// 4、取平方根：最后一步是取上一步结果的平方根，从而获得原始数据集的标准差。
+double calcSD(final List<double> arr, {final int? degreesOfFreedom}) {
+  double average = calcA(arr);
+  final int length = arr.length;
   double sumOfSquaredDifferences = 0;
-  for (double value in data) {
-    sumOfSquaredDifferences += (value - average) * (value - average);
+  for (var index = 0; index < length; index++) {
+    sumOfSquaredDifferences += math.pow(arr[index] - average, 2);
   }
-  return degreesOfFreedom != null
-      ? math.sqrt(sumOfSquaredDifferences / (length - degreesOfFreedom))
-      : math.sqrt(sumOfSquaredDifferences / length);
+  int len = (degreesOfFreedom != null ? length - degreesOfFreedom : length);
+  len = len > 0 ? len : 1;
+  return math.sqrt(sumOfSquaredDifferences / len);
 }
 
 /// 计算滚动标准差
-List<double> calcSTD(final List<double> data,final int period) {
+List<double> calcSTD(final List<double> data, final int period) {
   List<double> result = [];
   for (int index = 0; index < data.length; index++) {
     List<double> subData = period > index
         ? data.sublist(0, index + 1)
         : data.sublist(index - period + 1, index + 1);
-    result.add(calcSD(subData, 1));
+    result.add(calcSD(subData, degreesOfFreedom: 1));
   }
   return result;
 }

@@ -21,7 +21,18 @@ void calcBOLL(final List<Map<String, String?>> arr,
 
     closeList.add(closeToday);
   }
-  final List<double> maList =  calcMA(closeList, bollPeriod);
+  final List<double> maList = calcMA(closeList, bollPeriod);
+  final List<double> stdList = calcSTD(closeList, bollPeriod);
+  for (int i = 0; i < arr.length; i++) {
+    arr[i][FieldName.boll_mid] = maList[i].toStringAsFixed(2);
+    if (i > 0) {
+      arr[i][FieldName.boll_up] =
+          (maList[i] + stdList[i] * param).toStringAsFixed(2);
+
+      arr[i][FieldName.boll_low] =
+          (maList[i] - stdList[i] * param).toStringAsFixed(2);
+    }
+  }
 }
 
 void main() {
@@ -45,6 +56,6 @@ void main() {
   calcBOLL(priceData);
   for (int i = 0; i < priceData.length; i++) {
     print(
-        "${priceData[i]['date']} wr1: ${priceData[i][FieldName.wr1]} wr2: ${priceData[i][FieldName.wr2]}");
+        "${priceData[i]['date']} boll: ${priceData[i][FieldName.boll_mid]} up: ${priceData[i][FieldName.boll_up]}  low: ${priceData[i][FieldName.boll_low]}");
   }
 }
