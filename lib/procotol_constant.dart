@@ -126,6 +126,9 @@ class FieldName {
   ///EMV指标 MAEMV
   static const String maEmv = "MAEMV";
 
+  ///EXPMA指数平滑移动平均线
+  static const String expma = "EXPMA_";
+
   ///成交量ma5
   static const String ma5Vol = "ma5Vol";
 
