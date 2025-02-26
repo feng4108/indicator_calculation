@@ -102,6 +102,11 @@ class FieldName {
   ///顺势指标 CCI（Commodity Channel Index，商品通道指数）
   static const String cci = "CCI";
 
+  ///DMA指标 DIF(DMA值)
+  static const String dmaDif = "DMA_DIF";
+  ///DMA指标 MA的移动平均值（AMA)
+  static const String dmaDifMa = "DMA_AMA";
+
 
 
 
