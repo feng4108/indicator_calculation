@@ -107,6 +107,15 @@ class FieldName {
   ///DMA指标 MA的移动平均值（AMA)
   static const String dmaDifMa = "DMA_AMA";
 
+  ///DMI指标 +DI
+  static const String dmiPdi = "DMI_PDI";
+  /// DMI指标 -DI
+  static const String dmiMdi = "DMI_MDI";
+  /// DMI指标 ADX
+  static const String dmiAdx = "DMI_ADX";
+  /// DMI指标 ADXR
+  static const String dmiAdxr = "DMI_ADXR";
+
 
 
 

@@ -45,7 +45,7 @@ List<double> calcMA(final List<double> arr, final int period) {
 }
 
 ///计算指数移动平均线（EMA）
-List<double> calcEMA(List<double> data, double multiplier) {
+List<double> calcEMA(List<double> data, num multiplier) {
   List<double> result = [];
   if (data.isNotEmpty) {
     result.add(data[0]);
@@ -60,7 +60,7 @@ List<double> calcEMA(List<double> data, double multiplier) {
 }
 
 /// 计算平滑移动平均线（SMA）
-List<double> calcSMA(List<double> data, double totalWeight, double weight) {
+List<double> calcSMA(List<double> data, num totalWeight, num weight) {
   List<double> result = [];
   if (data.isNotEmpty) {
     result.add(data[0]);
