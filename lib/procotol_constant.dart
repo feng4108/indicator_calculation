@@ -104,28 +104,33 @@ class FieldName {
 
   ///DMA指标 DIF(DMA值)
   static const String dmaDif = "DMA_DIF";
+
   ///DMA指标 MA的移动平均值（AMA)
   static const String dmaDifMa = "DMA_AMA";
 
   ///DMI指标 +DI
   static const String dmiPdi = "DMI_PDI";
+
   /// DMI指标 -DI
   static const String dmiMdi = "DMI_MDI";
+
   /// DMI指标 ADX
   static const String dmiAdx = "DMI_ADX";
+
   /// DMI指标 ADXR
   static const String dmiAdxr = "DMI_ADXR";
 
+  ///EMV指标 EMV
+  static const String emv = "EMV";
 
-
-
+  ///EMV指标 MAEMV
+  static const String maEmv = "MAEMV";
 
   ///成交量ma5
   static const String ma5Vol = "ma5Vol";
 
   ///成交额ma5
   static const String ma5Turnover = "ma5Turnover";
-
 
   ///成交均价
   static const String avgTrasPrice = 'avgTrasPrice';
