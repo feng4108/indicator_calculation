@@ -76,10 +76,13 @@ List<double> calcSMA(List<double> data, num totalWeight, num weight) {
 }
 
 /// 计算引用值
-List<double?> calcREF(List<double> data, int period) {
-  List<double?> result = List<double?>.filled(period, null, growable: true);
-
-  for (int index = data.length - 1; index >= period; index--) {
+List<double> calcREF(List<double> data,final int period) {
+  List<double> result = [];
+  int i = 0;
+  for (; i<period; i++) {
+    result.add(0);
+  }
+  for (int index = period; index<data.length; index++) {
     result.add(data[index - period]);
   }
 

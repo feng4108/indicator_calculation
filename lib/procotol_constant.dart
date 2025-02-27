@@ -42,6 +42,15 @@ class FieldName {
   static const String ma30 = "ma30";
   static const String ma120 = "ma120";
 
+  ///成交量ma5
+  static const String ma5Vol = "ma5Vol";
+
+  ///成交额ma5
+  static const String ma5Turnover = "ma5Turnover";
+
+  ///成交均价
+  static const String avgTrasPrice = 'avgTrasPrice';
+
   ///macd指标 macd
   static const String macd = "macd";
 
@@ -129,12 +138,11 @@ class FieldName {
   ///EXPMA指数平滑移动平均线
   static const String expma = "EXPMA_";
 
-  ///成交量ma5
-  static const String ma5Vol = "ma5Vol";
+  ///VR指标
+  static const String vr = "VR";
 
-  ///成交额ma5
-  static const String ma5Turnover = "ma5Turnover";
+  ///VR指标 MAVR
+  static const String mavr = "MAVR";
 
-  ///成交均价
-  static const String avgTrasPrice = 'avgTrasPrice';
+
 }
