@@ -142,7 +142,13 @@ class FieldName {
   static const String vr = "VR";
 
   ///VR指标 MAVR
-  static const String mavr = "MAVR";
+  static const String maVr = "MAVR";
+
+  ///TRIX指标
+  static const String trix = "TRIX";
+
+  ///TRIX指标 MATRIX
+  static const String maTrix = "MATRIX";
 
 
 }

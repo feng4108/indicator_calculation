@@ -98,7 +98,7 @@ void calcVR(
 
   for (int i = 0; i < arr.length; i++){
     arr[i][FieldName.vr] = vrList[i].toStringAsFixed(2);
-    arr[i][FieldName.mavr] = mavrList[i].toStringAsFixed(2);
+    arr[i][FieldName.maVr] = mavrList[i].toStringAsFixed(2);
   }
 }
 
@@ -122,6 +122,6 @@ void main() {
 
   calcVR(priceData);
   for (int i = 0; i < priceData.length; i++) {
-    print("${priceData[i]['date']} vr: ${priceData[i][FieldName.vr]} mavr: ${priceData[i][FieldName.mavr]}");
+    print("${priceData[i]['date']} vr: ${priceData[i][FieldName.vr]} mavr: ${priceData[i][FieldName.maVr]}");
   }
 }
