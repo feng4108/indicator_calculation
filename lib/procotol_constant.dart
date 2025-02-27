@@ -150,5 +150,8 @@ class FieldName {
   ///TRIX指标 MATRIX
   static const String maTrix = "MATRIX";
 
-
+  ///WVAD指标
+  static const String wvad = "WVAD";
+  ///WVAD指标 MA
+  static const String wvadMa = "WVADMA";
 }
