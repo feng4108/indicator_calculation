@@ -26,6 +26,9 @@ void calcDMA(final List<Map<String, String?>> arr,
     {final int shortPeriod = 10,
     final int longPeriod = 50,
     final int amaPeriod = 10}) {
+  if(arr.isEmpty){
+    return;
+  }
   final List<double> closeList = [];
 
   for (int i = 0; i < arr.length; i++) {

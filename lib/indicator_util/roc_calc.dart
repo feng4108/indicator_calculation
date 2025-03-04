@@ -19,6 +19,9 @@ import '../procotol_constant.dart';
 
 void calcROC(final List<Map<String, String?>> arr,
     {final int rocPeriod = 12, final int maRocPeriod = 6,}) {
+  if(arr.isEmpty){
+    return;
+  }
   final List<double> closeList = [];
 
   for (int i = 0; i < arr.length; i++) {

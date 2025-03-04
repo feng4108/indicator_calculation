@@ -16,6 +16,9 @@ import '../procotol_constant.dart';
 
 void calcEMV(final List<Map<String, String?>> arr,
     {final int period = 14, final int period2 = 9}) {
+  if(arr.isEmpty){
+    return;
+  }
   final List<double> volList = [];
   final List<double> midList = [];
   final List<double> midChangeList = [];

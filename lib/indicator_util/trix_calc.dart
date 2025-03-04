@@ -25,6 +25,9 @@ import '../procotol_constant.dart';
 
 void calcTRIX(final List<Map<String, String?>> arr,
     {final int trixPeriod = 12, final int maTrixPeriod = 9}) {
+  if(arr.isEmpty){
+    return;
+  }
   final List<double> closeList = [];
 
   for (int i = 0; i < arr.length; i++) {

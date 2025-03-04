@@ -88,6 +88,9 @@ class ASI {
   /// ASI=累计每日之SI值
   static void calcASI(List<Map<String, String?>> arr,
       {final int asiPeriod = 26, final int asitPeriod = 10}) {
+    if(arr.isEmpty){
+      return;
+    }
     List<double> siList = [];
     siList.add(0);
     final List<double> highList = [];

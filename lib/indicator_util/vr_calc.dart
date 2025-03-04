@@ -59,6 +59,9 @@ void calcVR(
   final int vrPeriod = 26,
   final int mavrPeriod = 6,
 }) {
+  if(arr.isEmpty){
+    return;
+  }
   final List<double> closeList = [];
 
   final List<double> avList = [];

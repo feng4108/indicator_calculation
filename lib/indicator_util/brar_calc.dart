@@ -40,6 +40,9 @@ import '../procotol_constant.dart';
 
 void calcBRAR(final List<Map<String, String?>> arr,
     {final int brarPeriod = 26}) {
+  if(arr.isEmpty){
+    return;
+  }
   final List<double> highList = [];
   final List<double> lowList = [];
   final List<double> openList = [];

@@ -18,6 +18,9 @@ import '../procotol_constant.dart';
 /// 这意味着WR值越低，表示市场越可能处于超买状态，而WR值越高则表明市场可能处于超卖状态
 void calcWR(final List<Map<String, String?>> arr,
     {final int wr1Period = 10, final int wr2Period = 6}) {
+  if(arr.isEmpty){
+    return;
+  }
   // 从数据中获取收盘价数组
   final List<double> closeList = [];
   // 从数据中获取最高价数组

@@ -160,4 +160,8 @@ class FieldName {
 
   ///ROC指标 MA
   static const String maRoc = "MAROC";
+
+    static const String psy = "PSY";
+
+  static const String maPsy = "MAPSY";
 }

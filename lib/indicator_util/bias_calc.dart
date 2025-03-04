@@ -17,6 +17,9 @@ void calcBIAS(final List<Map<String, String?>> arr,
     {final int bias1Period = 6,
     final int bias2Period = 12,
     final int bias3Period = 24}) {
+  if(arr.isEmpty){
+    return;
+  }
   // 从数据中获取收盘价数组
   final List<double> closeList = [];
   for (int i = 0; i < arr.length; i++) {

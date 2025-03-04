@@ -8,6 +8,9 @@ import '../procotol_constant.dart';
 
 void calcEXPMA(final List<Map<String, String?>> arr,
     {final List<int> periods = const [12,50]}) {
+  if(arr.isEmpty){
+    return;
+  }
   final List<double> closeList = [];
   for (int i = 0; i < arr.length; i++) {
     double closeToday = double.parse(arr[i][FieldName.close] ?? '0');

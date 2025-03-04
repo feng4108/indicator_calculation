@@ -22,6 +22,9 @@ import '../procotol_constant.dart';
 
 void calcWVAD(final List<Map<String, String?>> arr,
     {final int wvadPeriod = 24, final int maPeriod = 6}) {
+  if(arr.isEmpty){
+    return;
+  }
   final List<double> wvadList = [];
 
   for (int i = 0; i < arr.length; i++) {

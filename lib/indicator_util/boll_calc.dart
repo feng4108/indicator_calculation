@@ -14,6 +14,9 @@ import '../procotol_constant.dart';
 /// 下轨线（DN）是在中轨线下方减去两倍的标准差：DOWN=MB−2×SD
 void calcBOLL(final List<Map<String, String?>> arr,
     {final int bollPeriod = 20, final int param = 2}) {
+  if(arr.isEmpty){
+    return;
+  }
   // 从数据中获取收盘价数组
   final List<double> closeList = [];
   for (int i = 0; i < arr.length; i++) {

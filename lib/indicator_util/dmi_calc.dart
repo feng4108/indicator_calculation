@@ -35,6 +35,9 @@ import '../procotol_constant.dart';
 
 void calcDMI(final List<Map<String, String?>> arr,
     {final int dmPeriod = 14, final int dxPeriod = 6}) {
+  if(arr.isEmpty){
+    return;
+  }
   final List<double> highList = [];
   final List<double> lowList = [];
   final List<double> closeList = [];

@@ -38,6 +38,9 @@ import '../procotol_constant.dart';
 
 void calcCCI(final List<Map<String, String?>> arr,
     {final int cciPeriod = 14, final double param = 0.015}) {
+  if(arr.isEmpty){
+    return;
+  }
   final List<double> highList = [];
   final List<double> lowList = [];
   final List<double> closeList = [];
