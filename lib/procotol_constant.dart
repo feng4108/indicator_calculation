@@ -152,6 +152,7 @@ class FieldName {
 
   ///WVAD指标
   static const String wvad = "WVAD";
+
   ///WVAD指标 MA
   static const String wvadMa = "WVADMA";
 
@@ -161,7 +162,15 @@ class FieldName {
   ///ROC指标 MA
   static const String maRoc = "MAROC";
 
-    static const String psy = "PSY";
+  ///PSY指标
+  static const String psy = "PSY";
 
+  ///PSY指标 MA
   static const String maPsy = "MAPSY";
+
+  ///OBV指标
+  static const String obv = "OBV";
+
+  ///OBV指标 MA
+  static const String maObv = "MAOBV";
 }
