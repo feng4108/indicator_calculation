@@ -104,7 +104,7 @@ class TimeUtil {
 
   ///获取上一周的最后一天
   static DateTime getLastDayOfPreviousWeek(DateTime dateTime) {
-    DateTime lastWeek = dateTime.subtract(Duration(days: 7));
+    DateTime lastWeek = dateTime.subtract(const Duration(days: 7));
     DateTime lastSunday = lastWeek.subtract(Duration(days: lastWeek.weekday))
         .add(const Duration(days: 7));
     return lastSunday;

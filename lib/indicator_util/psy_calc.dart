@@ -1,4 +1,3 @@
-import 'package:promote_ma_calc/indicator_util/ot.dart';
 import 'package:promote_ma_calc/sz301536.dart';
 
 import '../procotol_constant.dart';

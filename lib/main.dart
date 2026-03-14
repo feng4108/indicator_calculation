@@ -97,9 +97,9 @@ class _MyHomePageState extends State<MyHomePage> {
         '${newList2.length}个数据，读取耗时：${DateTime.now().difference(now).inMilliseconds}毫秒');
     now = DateTime.now();
     await DateUpdateUtil.calcMaAndChangeRatio(newList2.sublist(0,240));
-    int _counter = DateTime.now().difference(now).inMilliseconds;
-    print('${newList2.length}个数据，计算耗时：$_counter毫秒');
-    return _counter;
+    int counter = DateTime.now().difference(now).inMilliseconds;
+    print('${newList2.length}个数据，计算耗时：$counter毫秒');
+    return counter;
   }
 
 
